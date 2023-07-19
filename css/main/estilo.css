@@ -1,0 +1,145 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+body{
+    height: 100%;
+    width: 100vw;
+    background-image:linear-gradient(rgba(155, 51, 110, 0.8), rgba(31, 30, 26, 0.8)), url(../../fotos/biografia/fundo2.jpg);
+    background-position: center center;
+    
+}
+
+header{
+    background-color: rgba(31, 30, 26, 1);
+    display: flex;
+    height: 10vh;
+}
+nav, div{
+    flex: 1;
+}
+.titulo h2 {
+    color: white;
+    font-size: 3em;
+    text-align: center; /* Centraliza horizontalmente */
+}
+
+
+nav ul {
+    text-decoration: none;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100%; /* Define a altura total */
+}
+
+nav li{
+    margin-right: 1em;
+}
+
+nav a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: pink;
+    text-decoration: none;
+  }
+.biografia{
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* form*/
+
+.login-form-biografia{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    justify-content: center;
+}
+
+
+
+.login__biografia{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0;
+}
+
+
+.login__biografia img{
+    width: 500px;
+}
+
+
+.login__biografia h1{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.9em;
+}
+
+
+.login__input1{
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 15px;
+    max-width: 300px;
+    outline: none;
+    padding: 15px;
+    width: 100%;    
+    
+}
+
+.login__button1{
+    background-color: #ee665c;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    max-width: 300px;
+    padding: 15px;
+    width: 100%;
+}
+
+.login__button1:disabled{
+  background: #eee;
+  color: #aaa;
+  cursor: auto;
+
+}
+
+
+footer div{
+    background-color: rgba(31, 30, 26, 1);
+    width: 100vw;
+    height: 100px;
+    margin-top: 150px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+ 
