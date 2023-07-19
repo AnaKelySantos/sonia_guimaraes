@@ -38,10 +38,7 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
     if (disabledCards.length === 20) {
         clearInterval(this.loop);
-        exibirModal();
-        setTimeout(() => {
-            alert(`Parabéns ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML}`);
-        }, 500);
+        
     }
 }
 
