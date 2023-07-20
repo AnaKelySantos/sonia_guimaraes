@@ -64,6 +64,10 @@ const exibirModal = () => {
     switch (firstCharacter) {
         case "1":
             soni.innerHTML = '<p>Sônia Guimarães foi a primeira mulher brasileira a obter o título de doutora em Física.</p>';
+
+            
+                
+            
             break;
         case "2":
             soni.innerHTML = '<p>Em 2017, foi criado dentro do Instituto de Física da Universidade de São Paulo o Coletivo Negro Sonia Guimarães. Esse coletivo tem como objetivo principal ser um ambiente de acolhimento e apoio aos estudantes negros da instituição. Ele busca promover a equidade e a inclusão racial no âmbito acadêmico, oferecendo suporte emocional, orientação e incentivo aos estudantes negros que enfrentam desafios e enfrentam questões relacionadas à representatividade e ao acesso igualitário à educação.</p>';
@@ -100,8 +104,10 @@ const exibirModal = () => {
   exibirModal();
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
+   
   });
   
+ 
 
 }else{
 
