@@ -476,7 +476,7 @@ footer{
     .nav-manual{
         position: absolute;
         width: 100%;
-        margin-top: 35%;
+       /* margin-top: 35%;*/
     }
     
     .nav-manual .manual-btn{
@@ -499,6 +499,14 @@ footer{
 
 }
 
+@media(max-width: 1044px){
+
+    .nav-manual .manual-btn, .nav-auto div{
+       
+        margin: 1px;
+    }
+}
+
 @media(max-width: 600px){
     
     .sobre img{
@@ -519,14 +527,6 @@ footer{
 }
 
 
-@media(max-width: 500px){
 
-    
-}
 
-@media(max-width: 500px){
-
-    
-
-}
 

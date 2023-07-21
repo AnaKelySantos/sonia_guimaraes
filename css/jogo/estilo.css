@@ -93,6 +93,38 @@ header{
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
  }
+
+
+.options {
+    display: block;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 30px 50px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
+
+
+.green {
+    background-color: #00FF00;
+}
+
+.red {
+    background-color: #FF0000;
+}
+
  
  .modal-content {
     background-color: #fefefe;
@@ -100,6 +132,8 @@ header{
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
  }
  
  .close {

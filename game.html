@@ -30,12 +30,18 @@
 </header>
 
 <div id="modal" class="modal">
-    <div class="modal-content">
+  <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Conhecendo a Sônia</h2>
-      <p id="texto">Conteúdo do modal...</p>
-    </div>
+      <h1 id="question"></h1>
+      <div class="options" id="opcao">
+          <!-- Atributos data-option definem o valor da variável 'certa' -->
+          <button onclick="cor()" id="a"></button>
+          <button onclick="cor()" id="b"></button>
+          
+      </div>
   </div>
+</div>
+
   
     <div class="grid"></div>
 </main>
