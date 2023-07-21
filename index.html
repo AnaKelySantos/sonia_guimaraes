@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/6dda5f6271.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <script defer src="js/main/login.js"></script>
-    <title>Sôia Guimarães</title>
+    <script src="slide.js"></script>
+    <title>Sônia Guimarães</title>
 </head>
 <body>
 
@@ -25,7 +27,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#biografia">Jogo</a></li>
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#carrosel">carrosel</a></li>
+            <li><a href="#carrosel">foto</a></li>
             <li><a href="#contatos">Desenvolvedora</a></li>
         </ul>
     </nav>
@@ -35,14 +37,6 @@
         <div class="three"></div>
     </div>
 </header>
-
-
-    
-
-
-
-
-
 
 <section class="biografia" id="biografia">
 
@@ -88,38 +82,42 @@
 </section>
 
     <section class="slider" id="carrosel">
-        <div class="slider-content">
-            <input type="radio" name="btn-radio" id="radio1">
-            <input type="radio" name="btn-radio" id="radio2">
-            <input type="radio" name="btn-radio" id="radio3">
+        
+            <div class="slider-content">
+                
+                <input type="radio" name="btn-radio" id="radio1">
+                <input type="radio" name="btn-radio" id="radio2">
+                <input type="radio" name="btn-radio" id="radio3">
     
-            <div class="slider-box primeiro">
-                <img src="img/slide-1.jpg" alt="slide 1" class="img-desktop">
-                <img src="img/slide-1-mob.jpg" alt="slide 1" class="img-mobile">
-               
-            </div>
+                <div class="slide-box primeiro">
+                    <img class="img-desktop" src="img/slide-1.jpg" alt="slide 1">
+                    <img class="img-mobile" src="img/slide-1-mob.jpg" alt="slide 1">
+                </div>
     
-            <div class="slider-box segundo">
-                <img src="img/slide-2.jpg" alt="slide 2" class="img-desktop">
-                <img src="img/slide-2-mob.jpg" alt="slide 2" class="img-mobile">
+                <div class="slide-box">
+                    <img class="img-desktop" src="img/slide-2.jpg" alt="slide 3">
+                    <img class="img-mobile" src="img/slide-2-mob.jpg" alt="slide 1">
+                </div>
+    
+                <div class="slide-box">
+                    <img class="img-desktop" src="img/slide-3.jpg" alt="slide 3">
+                    <img class="img-mobile" src="img/slide-3-mob.jpg" alt="slide 3">
+                </div>
+    
+                <div class="nav-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+    
+                <div class="nav-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+    
             </div>
-            
-            <div class="slider-box terceiro">
-                <img src="img/slide-3.jpg" alt="slide 3" class="img-desktop">
-                <img src="img/slide-3-mob.jpg" alt="slide 3" class="img-mobile">
-            </div>
-            <div class="nav-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-            </div>
-            <div class="nav-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-            </div>
-        </div>
-    </section>
+        </section>
     
 
 <section class="contatos" id="contatos">
