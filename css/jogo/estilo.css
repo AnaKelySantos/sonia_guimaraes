@@ -1,53 +1,4 @@
-.content{
-    width: 100vw;
-    height: 70px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color:#1a2e35 ;
-    padding-left: 30rem;
-}
 
-.logo{
-    width: 70px;
-    height: auto;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.logo h3{
-    color: white;
-    font-size: 1.6rem;
-
-}
-
-.logo img{
-    width: 100%;
-    height: 100%;
-}
-
-.content .list-menu{
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.content .list-menu li a{
-    padding: 3rem 2rem 1rem 1rem;
-    color: white;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: all 200ms ease-in;
-}
-
-.content .list-menu li a:hover{
-background-color: #333333;
-border-bottom: 4px solid #5ae4a8;
-color: #5ae4a8;
-}
 
 body{
     background-color: #1a2e35;
@@ -56,7 +7,7 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     background-image: url("../../fotos/jogo/fundo2.jpg");
     background-size: cover;
     min-height: 100vh;
@@ -175,4 +126,93 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+ }
+
+ 
+     
+     
+    
+
+   
+
+    @media(max-width: 921px){
+       
+            
+            header{
+                width: 65%;
+            }
+        .grid{
+        max-width: 600px;
+        width: 80%;
+            }
+
+    }
+
+
+    @media(max-width: 563px){
+       
+        main{
+            padding: 20px 0 50px;
+           }     
+        header{
+            width: 65%;
+        }
+    .grid{
+    max-width: 320px;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+        }
+
+}
+
+@media(max-width: 387px){
+       
+   main{
+    padding: 20px 0 50px;
+   }        
+    header{
+        width: 50%;
+
+
+    }
+.grid{
+max-width: 300px;
+width: 100%;
+grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 290px){
+       
+    main{
+     padding: 20px 0 40px ;
+    }        
+     header{
+         width: 70%;
+ 
+ 
+     }
+ .grid{
+ max-width: 250px;
+ width: 100%;
+ grid-template-columns: repeat(2, 1fr);
+     }
+ }
+
+
+ @media(max-width: 50px){
+       
+    main{
+     padding: 20px 0 40px ;
+    }        
+     header{
+         width: 70%;
+ 
+ 
+     }
+ .grid{
+ max-width: 250px;
+ width: 100%;
+ grid-template-columns: repeat(3, 1fr);
+     }
  }
