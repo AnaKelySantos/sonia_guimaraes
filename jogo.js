@@ -251,7 +251,6 @@ window.onload = ()=>{
 }
 
 
-
 function cor() {
   const buttons = document.querySelectorAll('.choice');
   const pontuacao = document.getElementById('pontuacao');
@@ -332,5 +331,9 @@ function cor() {
     // Limpa as variáveis firstCard e secondCard
     firstCard = '';
     secondCard = '';
+
+    // Habilita os botões para a próxima pergunta
+    enableButtons();
   }, 5000);
 }
+
