@@ -79,7 +79,7 @@ const exibirModal = () => {
             soni.innerHTML = '<p>Foi a primeira mulher brasileira a obter o título de doutora em?</p>';
            a.innerHTML=`fisica`;
            b.innerHTML=`quimica`;
-           certa = 1;
+           certa = 2;
             
            
             
@@ -278,9 +278,7 @@ function cor() {
       button.addEventListener('click', handleChoice);
     });
 
-    // Mostra a próxima pergunta
-    // Chame a função para exibir o modal com a próxima pergunta aqui
-    // exibirModal();
-  }, 2000); // Altere o atraso (em milissegundos) conforme necessário para a transição
+    
+  }, 5000);
 }
 
