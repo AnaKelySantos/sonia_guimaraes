@@ -254,53 +254,78 @@ window.onload = ()=>{
 
 function cor() {
   const buttons = document.querySelectorAll('.choice');
+  const pontuacao = document.getElementById('pontuacao');
+  const clickedButton = event.target.id; // ID do botão clicado pelo usuário
+  const currentTime = Number(timer.textContent);
 
   // Desabilita o evento de clique nos botões
   buttons.forEach((button) => {
     button.removeEventListener('click', handleChoice);
   });
 
-  const pontuacao = document.getElementById('pontuacao');
-
   if (certa === 0) {
-    a.style.backgroundColor = "#31FF4E"; // Resposta correta - verde
-    b.style.backgroundColor = "#FF0F0F"; // Resposta incorreta - vermelho
+    if (clickedButton === 'a') {
+      // Resposta correta clicando no botão A
+      a.style.backgroundColor = "#31FF4E"; // Cor verde no botão A
 
-    // Adiciona mensagem de tempo ganho ao campo 'pontuacao' no modal
-    pontuacao.textContent = '+ 30 segundos!';
+      // Adiciona mensagem de penalidade de tempo perdido ao campo 'pontuacao' no modal
+      pontuacao.textContent = '-10 segundos!';
 
-    // Adiciona 30 segundos ao tempo
-    const currentTime = Number(timer.textContent);
-    timer.textContent = currentTime + 30;
-  } else {
-    b.style.backgroundColor = "#31FF4E"; // Resposta correta - verde
-    a.style.backgroundColor = "#FF0F0F"; // Resposta incorreta - vermelho
+      // Subtrai 10 segundos do tempo
+      timer.textContent = currentTime - 10;
+    } else if (clickedButton === 'b') {
+      // Resposta errada clicando no botão B
+      b.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
 
-    // Adiciona mensagem de tempo perdido ao campo 'pontuacao' no modal
-    pontuacao.textContent = '- 10 segundos!';
+      // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
+      pontuacao.textContent = '+30 segundos!';
 
-    // Subtrai 10 segundos do tempo
-    const currentTime = Number(timer.textContent);
-    const newTime = currentTime - 10;
-    timer.textContent = newTime < 0 ? 0 : newTime;
+      // Adiciona 30 segundos ao tempo
+      timer.textContent = currentTime + 30;
+    }
+  } else if (certa === 1) {
+    if (clickedButton === 'a') {
+      // Resposta errada clicando no botão A
+      a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
+
+      // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
+      pontuacao.textContent = '+30 segundos!';
+
+      // Adiciona 30 segundos ao tempo
+      timer.textContent = currentTime + 30;
+    } else if (clickedButton === 'b') {
+      // Resposta correta clicando no botão B
+      b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
+
+      // Adiciona mensagem de penalidade de tempo perdido ao campo 'pontuacao' no modal
+      pontuacao.textContent = '-10 segundos!';
+
+      // Subtrai 10 segundos do tempo
+      timer.textContent = currentTime - 10;
+    }
   }
 
   // Adiciona um atraso para limpar as cores e mensagens
   setTimeout(() => {
-    a.style.backgroundColor = ""; // Reinicia a cor do botão
-    b.style.backgroundColor = ""; // Reinicia a cor do botão
-
-    // Remove a mensagem de tempo ganho/perdido do campo 'pontuacao' no modal
+    // Remove a mensagem de penalidade/recompensa de tempo do campo 'pontuacao' no modal
     pontuacao.textContent = "";
+
+    // Reinicia as cores dos botões
+    a.style.backgroundColor = "";
+    b.style.backgroundColor = "";
 
     // Volta a adicionar o evento de clique aos botões
     buttons.forEach((button) => {
       button.addEventListener('click', handleChoice);
     });
 
-    // Volta a ocultar as cartas
-    firstCard.classList.remove('reveal-card');
-    secondCard.classList.remove('reveal-card');
+    // Volta a ocultar as cartas somente se ambas não forem a mesma carta
+    if (firstCard !== secondCard) {
+      firstCard.classList.remove('reveal-card');
+      secondCard.classList.remove('reveal-card');
+    }
+
+    // Limpa as variáveis firstCard e secondCard
     firstCard = '';
     secondCard = '';
   }, 5000);
