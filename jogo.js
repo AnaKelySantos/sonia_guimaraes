@@ -79,7 +79,7 @@ const exibirModal = () => {
             soni.innerHTML = '<p>Foi a primeira mulher brasileira a obter o título de doutora em?</p>';
            a.innerHTML=`fisica`;
            b.innerHTML=`quimica`;
-           certa = 2;
+           certa = 1;
             
            
             
