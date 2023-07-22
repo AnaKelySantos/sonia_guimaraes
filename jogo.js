@@ -293,13 +293,15 @@ function cor() {
     // Remove a mensagem de tempo ganho/perdido do campo 'pontuacao' no modal
     pontuacao.textContent = "";
 
-    // Adiciona novamente o evento de clique aos botões
+    // Volta a adicionar o evento de clique aos botões
     buttons.forEach((button) => {
       button.addEventListener('click', handleChoice);
     });
 
-    // Mostra a próxima pergunta
-    // Chame a função para exibir o modal com a próxima pergunta aqui
-    // exibirModal();
+    // Volta a ocultar as cartas
+    firstCard.classList.remove('reveal-card');
+    secondCard.classList.remove('reveal-card');
+    firstCard = '';
+    secondCard = '';
   }, 5000);
 }
