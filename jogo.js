@@ -260,25 +260,56 @@ function cor() {
     button.removeEventListener('click', handleChoice);
   });
 
+  function cor() {
+  const buttons = document.querySelectorAll('.choice');
+
+  // Desabilita o evento de clique nos botões
+  buttons.forEach((button) => {
+    button.removeEventListener('click', handleChoice);
+  });
+
+  const pontuacao = document.getElementById('pontuacao');
+
   if (certa === 0) {
     a.style.backgroundColor = "#31FF4E"; // Resposta correta - verde
     b.style.backgroundColor = "#FF0F0F"; // Resposta incorreta - vermelho
+
+    // Adiciona mensagem de tempo ganho ao campo 'pontuacao' no modal
+    pontuacao.textContent = '+ 30 segundos!';
+
+    // Adiciona 30 segundos ao tempo
+    const currentTime = Number(timer.textContent);
+    timer.textContent = currentTime + 30;
   } else {
     b.style.backgroundColor = "#31FF4E"; // Resposta correta - verde
     a.style.backgroundColor = "#FF0F0F"; // Resposta incorreta - vermelho
+
+    // Adiciona mensagem de tempo perdido ao campo 'pontuacao' no modal
+    pontuacao.textContent = '- 10 segundos!';
+
+    // Subtrai 10 segundos do tempo
+    const currentTime = Number(timer.textContent);
+    const newTime = currentTime - 10;
+    timer.textContent = newTime < 0 ? 0 : newTime;
   }
 
-  // Adiciona um atraso antes de limpar as cores e mostrar a próxima pergunta
+  // Adiciona um atraso para limpar as cores e mensagens
   setTimeout(() => {
     a.style.backgroundColor = ""; // Reinicia a cor do botão
     b.style.backgroundColor = ""; // Reinicia a cor do botão
+
+    // Remove a mensagem de tempo ganho/perdido do campo 'pontuacao' no modal
+    pontuacao.textContent = "";
 
     // Adiciona novamente o evento de clique aos botões
     buttons.forEach((button) => {
       button.addEventListener('click', handleChoice);
     });
 
-    
+    // Mostra a próxima pergunta
+    // Chame a função para exibir o modal com a próxima pergunta aqui
+    // exibirModal();
   }, 5000);
 }
+
 
