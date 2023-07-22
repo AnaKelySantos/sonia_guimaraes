@@ -262,6 +262,17 @@ function cor() {
     button.removeEventListener('click', handleChoice);
   });
 
+  function cor() {
+  const buttons = document.querySelectorAll('.choice');
+  const pontuacao = document.getElementById('pontuacao');
+  const clickedButton = event.target.id; // ID do botão clicado pelo usuário
+  const currentTime = Number(timer.textContent);
+
+  // Desabilita o evento de clique nos botões
+  buttons.forEach((button) => {
+    button.removeEventListener('click', handleChoice);
+  });
+
   if (certa === 0) {
     if (clickedButton === 'a') {
       // Resposta correta clicando no botão A
@@ -308,32 +319,18 @@ function cor() {
     }
   }
 
-  // Adiciona um atraso para limpar as cores e mensagens
-  setTimeout(() => {
-    // Remove a mensagem de penalidade/recompensa de tempo do campo 'pontuacao' no modal
-    pontuacao.textContent = "";
+  // Desabilita os botões de escolha
+  buttons.forEach((button) => {
+    button.disabled = true;
+  });
 
-    // Reinicia as cores dos botões
-    a.style.backgroundColor = "";
-    b.style.backgroundColor = "";
-
-    // Volta a adicionar o evento de clique aos botões
+  // Adiciona um evento de clique para reabilitar os botões quando o modal for fechado
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+    // Reabilita os botões de escolha
     buttons.forEach((button) => {
-      button.addEventListener('click', handleChoice);
+      button.disabled = false;
     });
-
-    // Volta a ocultar as cartas somente se ambas não forem a mesma carta
-    if (firstCard !== secondCard) {
-      firstCard.classList.remove('reveal-card');
-      secondCard.classList.remove('reveal-card');
-    }
-
-    // Limpa as variáveis firstCard e secondCard
-    firstCard = '';
-    secondCard = '';
-
-    // Habilita os botões para a próxima pergunta
-    enableButtons();
-  }, 5000);
+  });
 }
 
