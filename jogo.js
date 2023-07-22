@@ -257,7 +257,7 @@ const revealCard = ({ target }) => {
 
   
 
-
+let isPairDifferent = false;
 
 function cor() {
   const buttons = document.querySelectorAll('.choice');
@@ -298,68 +298,6 @@ function cor() {
       a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
       b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
 
-      // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
-      pontuacao.textContent = '+30 segundos!';
+      // Adiciona mensagem de recompensa de
 
-      // Adiciona 30 segundos ao tempo
-      timer.textContent = currentTime + 30;
-    } else if (clickedButton === 'b') {
-      // Resposta correta clicando no botão B
-      a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
-      b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
 
-      // Adiciona mensagem de penalidade de tempo perdido ao campo 'pontuacao' no modal
-      pontuacao.textContent = '-10 segundos!';
-
-      // Subtrai 10 segundos do tempo
-      timer.textContent = currentTime - 10;
-    }
-  }
-
-  // Desabilita os botões das cartas selecionadas
-  firstCard.classList.add('selected');
-  secondCard.classList.add('selected');
-
-  // Verifica se as cartas reveladas formam um par diferente
-  if (firstCard.getAttribute('data-character') !== secondCard.getAttribute('data-character')) {
-    // Adiciona um atraso para limpar as cores e mensagens
-    setTimeout(() => {
-      // Remove a mensagem de penalidade/recompensa de tempo do campo 'pontuacao' no modal
-      pontuacao.textContent = "";
-
-      // Reinicia as cores dos botões
-      a.style.backgroundColor = "";
-      b.style.backgroundColor = "";
-
-      // Volta a adicionar o evento de clique aos botões
-      buttons.forEach((button) => {
-        button.addEventListener('click', handleChoice);
-      });
-
-      // Volta a ocultar as cartas somente se ambas não forem a mesma carta
-      if (firstCard !== secondCard) {
-        firstCard.classList.remove('reveal-card');
-        secondCard.classList.remove('reveal-card');
-      }
-
-      // Limpa as variáveis firstCard e secondCard
-      firstCard = '';
-      secondCard = '';
-      isPairDifferent = false;
-    }, 5000);
-  } else {
-    // Reinicia as cores dos botões
-    a.style.backgroundColor = "";
-    b.style.backgroundColor = "";
-
-    // Volta a adicionar o evento de clique aos botões
-    buttons.forEach((button) => {
-      button.addEventListener('click', handleChoice);
-    });
-
-    // Limpa as variáveis firstCard e secondCard
-    firstCard = '';
-    secondCard = '';
-    isPairDifferent = true;
-  }
-}
