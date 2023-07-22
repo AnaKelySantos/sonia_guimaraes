@@ -253,14 +253,34 @@ window.onload = ()=>{
 
 
 function cor() {
+  const buttons = document.querySelectorAll('.choice');
+  
+  // Desabilita o evento de clique nos botões
+  buttons.forEach((button) => {
+    button.removeEventListener('click', handleChoice);
+  });
 
-    if (certa == 0) {
-        a.style.backgroundColor = "#31FF4E";
-        b.style.backgroundColor = "#FF0F0F";
-    }else{
-        b.style.backgroundColor = "#31FF4E";
-        a.style.backgroundColor = "FF0F0F";
-    }
+  if (certa === 0) {
+    a.style.backgroundColor = "#31FF4E"; // Resposta correta - verde
+    b.style.backgroundColor = "#FF0F0F"; // Resposta incorreta - vermelho
+  } else {
+    b.style.backgroundColor = "#31FF4E"; // Resposta correta - verde
+    a.style.backgroundColor = "#FF0F0F"; // Resposta incorreta - vermelho
+  }
 
+  // Adiciona um atraso antes de limpar as cores e mostrar a próxima pergunta
+  setTimeout(() => {
+    a.style.backgroundColor = ""; // Reinicia a cor do botão
+    b.style.backgroundColor = ""; // Reinicia a cor do botão
+
+    // Adiciona novamente o evento de clique aos botões
+    buttons.forEach((button) => {
+      button.addEventListener('click', handleChoice);
+    });
+
+    // Mostra a próxima pergunta
+    // Chame a função para exibir o modal com a próxima pergunta aqui
+    // exibirModal();
+  }, 2000); // Altere o atraso (em milissegundos) conforme necessário para a transição
 }
 
