@@ -254,14 +254,6 @@ window.onload = ()=>{
 
 function cor() {
   const buttons = document.querySelectorAll('.choice');
-  
-  // Desabilita o evento de clique nos botões
-  buttons.forEach((button) => {
-    button.removeEventListener('click', handleChoice);
-  });
-
-  function cor() {
-  const buttons = document.querySelectorAll('.choice');
 
   // Desabilita o evento de clique nos botões
   buttons.forEach((button) => {
@@ -311,5 +303,3 @@ function cor() {
     // exibirModal();
   }, 5000);
 }
-
-
