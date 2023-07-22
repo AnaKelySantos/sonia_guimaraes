@@ -255,15 +255,7 @@ const revealCard = ({ target }) => {
     return;
   }
 
-  if (firstCard == '') {
-    target.parentNode.classList.add('reveal-card');
-    firstCard = target.parentNode;
-  } else if (secondCard == '') {
-    target.parentNode.classList.add('reveal-card');
-    secondCard = target.parentNode;
-    checkCards();
-  }
-};
+  
 
 
 
