@@ -346,34 +346,90 @@ footer{
 
     }
 
-    /* Seus estilos CSS existentes aqui */
+    @media (max-width: 1200px) {
+    .main{
+        display: block;
+    }
+    .content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 12%;
+        padding-left: 0px;
+    }
+    .sobre-nos img{
+        width: 600px;
+        margin-left: -2px;
+    }
+        }
+
+
+@media (max-width: 992px) {
+    html {
+        font-size: 50%;
+    }
+    .contatos-secao {
+        width: 340px;
+    }
+}
 
 /* Media query para telas menores que 768px (Tablets e Smartphones em modo paisagem) */
+
 @media (max-width: 768px) {
-    /* Estilos para telas menores aqui */
+    html {
+        font-size: 50%;
+    }
 
     .content {
         padding-left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 40px;
     }
 
     .menu-toggle {
         display: block;
+        width: 30px;
+        height: 30px;
+    }
+
+    .contatos-secao {
+        width: 340px;
     }
 
     .list-menu {
         display: none;
     }
 
+    .one,
+    .two,
+    .three {
+        width: 80%;
+        height: 2px;
+        background-color: white;
+        margin: 6px auto;
+        transition-duration: 0.5s;
+    }
+
     .content.on {
         height: 100%;
         padding-left: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vw;
+        background-color: rgba(30, 31, 30, 0.8);
+        z-index: 10;
     }
 
     .content.on .list-menu {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        position: absolute;
+        display: block;
         top: 70px;
         right: 0;
         background-color: #1a2e35;
@@ -383,16 +439,44 @@ footer{
     }
 
     .content.on .list-menu li {
+        display: flex;
+        justify-content: center;
         width: 100%;
         text-align: center;
+    }
+
+    .content.on .list-menu li a {
+        font-size: 2rem;
+        display: block;
+    }
+
+    .content.on .menu-toggle .two {
+        display: none;
     }
 
     .content.on .menu-toggle .one {
         transform: rotate(240deg) translate(0, -8px);
     }
-      
+
     .content.on .menu-toggle .three {
         transform: rotate(-45deg) translate(0, -8px);
+    }
+
+    .nav-manual {
+        position: absolute;
+        width: 100%;
+        /* margin-top: 35%; */
+    }
+
+    .nav-manual .manual-btn {
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .itens-cardapio .info h4 {
+        margin-left: 12rem;
     }
 
     .sobre img {
@@ -404,28 +488,51 @@ footer{
 
     .sobre p {
         text-align: center;
+        font-size: 2rem;
         width: 400px;
     }
 
     .contatos-secao {
+        display: block;
         width: 300px;
     }
 }
 
-/* Media query para telas menores que 600px (Smartphones em modo retrato) */
 @media (max-width: 600px) {
     /* Estilos para telas menores aqui */
 
+    .nav-manual .manual-btn, .nav-auto div {
+        margin: 1px;
+    }
+
     .logo {
         padding-left: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sobre img {
+        width: 400px;
+        height: 250px;
+        margin: 50px;
+        align-items: center;
     }
 
     .content .list-menu {
         display: none;
     }
 
+    .sobre p {
+        text-align: center;
+        width: 400px;
+    }
+
     .content .menu-toggle {
         display: block;
+    }
+
+    .contatos-secao {
+        width: 300px;
     }
 
     .content.on .list-menu {
@@ -450,3 +557,6 @@ footer{
         width: 100%;
     }
 }
+
+
+
