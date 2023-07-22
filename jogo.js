@@ -250,6 +250,22 @@ window.onload = ()=>{
     loadGame()
 }
 
+const revealCard = ({ target }) => {
+  if (target.parentNode.className.includes('reveal-card') || target.parentNode.classList.contains('selected')) {
+    return;
+  }
+
+  if (firstCard == '') {
+    target.parentNode.classList.add('reveal-card');
+    firstCard = target.parentNode;
+  } else if (secondCard == '') {
+    target.parentNode.classList.add('reveal-card');
+    secondCard = target.parentNode;
+    checkCards();
+  }
+};
+
+
 
 function cor() {
   const buttons = document.querySelectorAll('.choice');
@@ -308,11 +324,38 @@ function cor() {
     }
   }
 
-  // Adiciona um atraso para limpar as cores e mensagens
-  setTimeout(() => {
-    // Remove a mensagem de penalidade/recompensa de tempo do campo 'pontuacao' no modal
-    pontuacao.textContent = "";
+  // Desabilita os botões das cartas selecionadas
+  firstCard.classList.add('selected');
+  secondCard.classList.add('selected');
 
+  // Verifica se as cartas reveladas formam um par diferente
+  if (firstCard.getAttribute('data-character') !== secondCard.getAttribute('data-character')) {
+    // Adiciona um atraso para limpar as cores e mensagens
+    setTimeout(() => {
+      // Remove a mensagem de penalidade/recompensa de tempo do campo 'pontuacao' no modal
+      pontuacao.textContent = "";
+
+      // Reinicia as cores dos botões
+      a.style.backgroundColor = "";
+      b.style.backgroundColor = "";
+
+      // Volta a adicionar o evento de clique aos botões
+      buttons.forEach((button) => {
+        button.addEventListener('click', handleChoice);
+      });
+
+      // Volta a ocultar as cartas somente se ambas não forem a mesma carta
+      if (firstCard !== secondCard) {
+        firstCard.classList.remove('reveal-card');
+        secondCard.classList.remove('reveal-card');
+      }
+
+      // Limpa as variáveis firstCard e secondCard
+      firstCard = '';
+      secondCard = '';
+      isPairDifferent = false;
+    }, 5000);
+  } else {
     // Reinicia as cores dos botões
     a.style.backgroundColor = "";
     b.style.backgroundColor = "";
@@ -322,14 +365,9 @@ function cor() {
       button.addEventListener('click', handleChoice);
     });
 
-    // Volta a ocultar as cartas somente se ambas não forem a mesma carta
-    if (firstCard !== secondCard) {
-      firstCard.classList.remove('reveal-card');
-      secondCard.classList.remove('reveal-card');
-    }
-
     // Limpa as variáveis firstCard e secondCard
     firstCard = '';
     secondCard = '';
-  }, 5000);
+    isPairDifferent = true;
+  }
 }
