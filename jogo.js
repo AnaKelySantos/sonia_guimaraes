@@ -267,6 +267,7 @@ function cor() {
     if (clickedButton === 'a') {
       // Resposta correta clicando no botão A
       a.style.backgroundColor = "#31FF4E"; // Cor verde no botão A
+      b.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
 
       // Adiciona mensagem de penalidade de tempo perdido ao campo 'pontuacao' no modal
       pontuacao.textContent = '-10 segundos!';
@@ -275,7 +276,8 @@ function cor() {
       timer.textContent = currentTime - 10;
     } else if (clickedButton === 'b') {
       // Resposta errada clicando no botão B
-      b.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
+      b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
+      a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
 
       // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
       pontuacao.textContent = '+30 segundos!';
@@ -286,7 +288,8 @@ function cor() {
   } else if (certa === 1) {
     if (clickedButton === 'a') {
       // Resposta errada clicando no botão A
-      a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
+      a.style.backgroundColor = "#31FF4E"; // Cor verde no botão A
+      b.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
 
       // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
       pontuacao.textContent = '+30 segundos!';
@@ -296,6 +299,7 @@ function cor() {
     } else if (clickedButton === 'b') {
       // Resposta correta clicando no botão B
       b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
+      a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
 
       // Adiciona mensagem de penalidade de tempo perdido ao campo 'pontuacao' no modal
       pontuacao.textContent = '-10 segundos!';
