@@ -251,16 +251,8 @@ window.onload = ()=>{
 }
 
 
-function cor() {
-  const buttons = document.querySelectorAll('.choice');
-  const pontuacao = document.getElementById('pontuacao');
-  const clickedButton = event.target.id; // ID do botão clicado pelo usuário
-  const currentTime = Number(timer.textContent);
 
-  // Desabilita o evento de clique nos botões
-  buttons.forEach((button) => {
-    button.removeEventListener('click', handleChoice);
-  });
+
 
   function cor() {
   const buttons = document.querySelectorAll('.choice');
