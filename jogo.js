@@ -79,7 +79,7 @@ const exibirModal = () => {
             soni.innerHTML = '<p>Foi a primeira mulher brasileira a obter o título de doutora em?</p>';
            a.innerHTML=`fisica`;
            b.innerHTML=`quimica`;
-           certa = 1;
+           certa = 0;
             
            
             
@@ -136,7 +136,7 @@ const exibirModal = () => {
             soni.innerHTML = '<p>Qual marco histórico Sônia Guimarães alcançou na ciência?</p>';
             a.innerHTML=`Tornou-se a primeira mulher doutorada em Física no Brasil.`;
            b.innerHTML=`Foi a primeira mulher a receber o Prêmio Nobel em Física.`;
-            certa = 1
+            certa = 0
             break;
     }
     
@@ -149,6 +149,7 @@ const exibirModal = () => {
   exibirModal();
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
+    butaoclicado = false;
    
   });
   
@@ -251,6 +252,7 @@ window.onload = ()=>{
 }
 
 
+var butaoclicado = false;
 
   function cor() {
   const buttons = document.querySelectorAll('.choice');
@@ -263,40 +265,48 @@ window.onload = ()=>{
     button.removeEventListener('click', handleChoice);
   });
 
+  
+
   if (certa === 0) {
-    if (clickedButton === 'a') {
+    if (!butaoclicado && clickedButton === 'a') {
       // Resposta correta clicando no botão A
       a.style.backgroundColor = "#31FF4E"; // Cor verde no botão A
       b.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
 
       // Adiciona mensagem de penalidade de tempo perdido ao campo 'pontuacao' no modal
       pontuacao.textContent = '-10 segundos!';
-
+        
       // Subtrai 10 segundos do tempo
       timer.textContent = currentTime - 10;
-    } else if (clickedButton === 'b') {
+      butaoclicado = true
+    } else if (!butaoclicado && clickedButton === 'b') {
       // Resposta errada clicando no botão B
-      b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
-      a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
+      a.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
+      b.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
 
       // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
       pontuacao.textContent = '+30 segundos!';
 
       // Adiciona 30 segundos ao tempo
       timer.textContent = currentTime + 30;
+      butaoclicado = true
     }
   } else if (certa === 1) {
-    if (clickedButton === 'b') {
+
+      
+    if (!butaoclicado & clickedButton === 'b') {
       // Resposta errada clicando no botão A
       b.style.backgroundColor = "#31FF4E"; // Cor verde no botão A
       a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
 
       // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
-      pontuacao.textContent = '-30 segundos!';
+      pontuacao.textContent = '-10 segundos!';
 
       // Adiciona 30 segundos ao tempo
       timer.textContent = currentTime - 10;
-    } else if (clickedButton === 'a') {
+      
+      butaoclicado = true
+    } else if (!butaoclicado && clickedButton === 'a') {
       // Resposta correta clicando no botão B
       b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
       a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
@@ -306,6 +316,7 @@ window.onload = ()=>{
 
       // Subtrai 10 segundos do tempo
       timer.textContent = currentTime + 30;
+      butaoclicado = true
     }
   }
 
@@ -317,7 +328,7 @@ window.onload = ()=>{
     // Reinicia as cores dos botões
     a.style.backgroundColor = "";
     b.style.backgroundColor = "";
-
+  
     // Volta a adicionar o evento de clique aos botões
     buttons.forEach((button) => {
       button.addEventListener('click', handleChoice);
@@ -335,7 +346,7 @@ window.onload = ()=>{
 
     // Habilita os botões para a próxima pergunta
     enableButtons();
-  }, 5000);
+  }, 9000);
 }
 
 
