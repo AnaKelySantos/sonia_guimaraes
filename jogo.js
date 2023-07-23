@@ -9,6 +9,11 @@ const soni = document.getElementById("question")
 const a = document.getElementById("a")
 const b = document.getElementById("b")
 var certa = 0; // Declaramos a variável certa no escopo glob
+const timerElement = document.querySelector(".timerm"); // Seleciona a span com a classe "timerm"
+
+
+      
+
 
 const characters = [
     '1',
@@ -239,7 +244,7 @@ const startTimer = () =>{
 
             const currentTime = Number(timer.innerHTML) 
             timer.innerHTML = currentTime + 1
-
+            timerElement.innerHTML = currentTime + 1
     }, 1000)
 
 }
