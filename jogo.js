@@ -286,26 +286,26 @@ window.onload = ()=>{
       timer.textContent = currentTime + 30;
     }
   } else if (certa === 1) {
-    if (clickedButton === 'a') {
+    if (clickedButton === 'b') {
       // Resposta errada clicando no botão A
-      a.style.backgroundColor = "#31FF4E"; // Cor verde no botão A
-      b.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
+      b.style.backgroundColor = "#31FF4E"; // Cor verde no botão A
+      a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão B
 
       // Adiciona mensagem de recompensa de tempo ganho ao campo 'pontuacao' no modal
-      pontuacao.textContent = '+30 segundos!';
+      pontuacao.textContent = '-30 segundos!';
 
       // Adiciona 30 segundos ao tempo
-      timer.textContent = currentTime + 30;
-    } else if (clickedButton === 'b') {
+      timer.textContent = currentTime - 10;
+    } else if (clickedButton === 'a') {
       // Resposta correta clicando no botão B
       b.style.backgroundColor = "#31FF4E"; // Cor verde no botão B
       a.style.backgroundColor = "#FF0F0F"; // Cor vermelha no botão A
 
       // Adiciona mensagem de penalidade de tempo perdido ao campo 'pontuacao' no modal
-      pontuacao.textContent = '-10 segundos!';
+      pontuacao.textContent = '+30 segundos!';
 
       // Subtrai 10 segundos do tempo
-      timer.textContent = currentTime - 10;
+      timer.textContent = currentTime + 30;
     }
   }
 
