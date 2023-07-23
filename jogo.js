@@ -340,14 +340,7 @@ var butaoclicado = false;
     });
 
     // Volta a ocultar as cartas somente se ambas não forem a mesma carta
-    if (firstCard !== secondCard) {
-      firstCard.classList.remove('reveal-card');
-      secondCard.classList.remove('reveal-card');
-    }
-
-    // Limpa as variáveis firstCard e secondCard
-    firstCard = '';
-    secondCard = '';
+    
 
     // Habilita os botões para a próxima pergunta
     enableButtons();
