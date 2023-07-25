@@ -344,7 +344,7 @@ var butaoclicado = false;
 
     // Habilita os botões para a próxima pergunta
     enableButtons();
-  }, 9000);
+  }, 3000);
 }
 
 
